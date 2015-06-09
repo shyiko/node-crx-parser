@@ -13,7 +13,7 @@ npm install crx-parser --save
 ```javascript
 var parseCRX = require('crx-parser');
 
-fs.readFile(/tmp/mfabfdnimhipcapcioneheloaehhoggk.crx', function (err, buff) {
+fs.readFile('/tmp/mfabfdnimhipcapcioneheloaehhoggk.crx', function (err, buff) {
     parseCRX(buff, function (err, data) {
         console.log(data.header.publicKey);
         ...
