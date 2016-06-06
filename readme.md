@@ -21,7 +21,7 @@ fs.readFile('/tmp/mfabfdnimhipcapcioneheloaehhoggk.crx', function (err, buff) {
 });
 ```
  
-> For complete example see [text/index.spec.js](https://github.com/shyiko/node-crx-parser/blob/master/test/index.spec.js). 
+> For complete example see [test/index.spec.js](https://github.com/shyiko/node-crx-parser/blob/master/test/index.spec.js). 
 
 ## License
 
