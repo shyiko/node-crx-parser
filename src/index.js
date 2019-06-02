@@ -3,7 +3,8 @@ module.exports = function (buff, cb) {
     return cb(new Error('Unexpected CRX magic number')), undefined;
   }
 
-  if (buff.readUInt32LE(4) !== 2) {
+  var crxVersion = buff.readUInt32LE(4);
+  if (crxVersion !== 2 && crxVersion !== 3) {
     return cb(new Error('Unexpected CRX version')), undefined;
   }
 
