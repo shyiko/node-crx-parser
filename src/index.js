@@ -27,8 +27,8 @@ module.exports = function (buff, cb) {
   } else if (crxVersion === 3) {
     var headerLength = buff.readUInt32LE(8);
     var metaOffset = 12;
-    var rawHeader = new Buffer(buff.slice(metaOffset,
-      metaOffset + headerLength));
+    // var rawHeader = new Buffer(buff.slice(metaOffset,
+    //   metaOffset + headerLength));
     
     cb(null, {
       header: null,
