@@ -43,6 +43,7 @@ function getManifest(zipArchive, cb) {
     });
 }
 
+// CRX2 test
 fs.readFile(__dirname + '/fixture/mfabfdnimhipcapcioneheloaehhoggk.crx',
   function (err, buff) {
     assert(!err, err);
@@ -56,3 +57,16 @@ fs.readFile(__dirname + '/fixture/mfabfdnimhipcapcioneheloaehhoggk.crx',
     });
   });
 
+// CRX3 test
+fs.readFile(__dirname + '/fixture/crx3.crx',
+  function (err, buff) {
+    assert(!err, err);
+    parseCRX(buff, function (err, data) {
+      assert(!err, err);
+      // assert.equal(data.header.publicKey, expectedPublicKey);
+      getManifest(data.body, function (err, manifest) {
+        assert(!err, err);
+        assert.equal(manifest.version, '1.2.0')
+      });
+    });
+  });
