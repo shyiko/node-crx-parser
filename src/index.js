@@ -12,9 +12,9 @@ module.exports = function (buff, cb) {
     var publicKeyLength = buff.readUInt32LE(8);
     var signatureLength = buff.readUInt32LE(12);
     var metaOffset = 16;
-    var publicKey = new Buffer(buff.slice(metaOffset,
+    var publicKey = Buffer.from(buff.slice(metaOffset,
       metaOffset + publicKeyLength)).toString('base64');
-    var signature = new Buffer(buff.slice(metaOffset + publicKeyLength,
+    var signature = Buffer.from(buff.slice(metaOffset + publicKeyLength,
       metaOffset + publicKeyLength + signatureLength)).toString('base64');
   
     cb(null, {
@@ -27,7 +27,7 @@ module.exports = function (buff, cb) {
   } else if (crxVersion === 3) {
     var headerLength = buff.readUInt32LE(8);
     var metaOffset = 12;
-    // var rawHeader = new Buffer(buff.slice(metaOffset,
+    // var rawHeader = Buffer.from(buff.slice(metaOffset,
     //   metaOffset + headerLength));
     
     cb(null, {
